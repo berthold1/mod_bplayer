@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+  <name>MOD_BPLAYER</name>
+  <author>Berthold</author>
+  <creationDate>March 2016</creationDate>
+  <copyright>Copyright (c) 2016. All rights reserved.</copyright>
+  <authorEmail></authorEmail>
+  <authorUrl></authorUrl>
+  <version>1.0</version>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <description>Add Musics/Videos to your website</description>
+  <files>
+    <filename module="mod_bplayer">mod_bplayer.php</filename>
+    <filename>index.html</filename>
+    <filename>helper.php</filename>
+    <folder>assets</folder>
+    <folder>tmpl</folder>
+    <folder>language</folder>
+  </files>
+  <params>
+    <param type="spacer" default="GENERAL_SETTINGS" />
+    <param name="coverimage" type="text" default="" label="COVER_IMAGE_LABEL" description="COVER_IMAGE_DESCRIPTION" size="60" />
+    <param name="musicdata" type="textarea" cols="50" rows="10" default="title,file.mp3" label="MUSIC_DATA_LABEL" description="MUSIC_DATA_DESCRIPTION" />
+    <param type="spacer" default="PLAYER_SETTINGS" />
+    <param name="width" type="text" default="100%" label="WIDTH_LABEL" description="WIDTH_DESCRIPTION" />
+    <param name="height" type="text" default="250px" label="HEIGHT_LABEL" description="HEIGHT_DESCRIPTION" />
+    <param name="autostart" type="radio" default="0" label="AUTOSTART_LABEL" description="AUTOSTART_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="playlistautostart" type="radio" default="1" label="PLAYLIST_AUTOSTART_LABEL" description="PLAYLIST_AUTOSTART_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="volumelevel" type="text" default="0.8" label="VOLUME_LEVEL_LABEL" description="VOLUME_LEVEL_DESCRIPTION" />
+    <param type="spacer" default="ENABLE_OR_DISABLE_SKIN_ELEMENTS" />
+    <param name="nextdock" type="radio" default="1" label="ENABLE_OR_DISABLE_NEXTDOCK_LABEL" description="ENABLE_OR_DISABLE_NEXTDOCK_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="prevdock" type="radio" default="1" label="ENABLE_OR_DISABLE_PREVDOCK_LABEL" description="ENABLE_OR_DISABLE_PREVDOCK_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="progressbar" type="radio" default="1" label="ENABLE_OR_DISABLE_PROGRESSBAR_LABEL" description="ENABLE_OR_DISABLE_PROGRESSBAR_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="timerdock" type="radio" default="1" label="ENABLE_OR_DISABLE_TIMERDOCK_LABEL" description="ENABLE_OR_DISABLE_TIMERDOCK_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="volumedock" type="radio" default="1" label="ENABLE_OR_DISABLE_VOLUMEDOCK_LABEL" description="ENABLE_OR_DISABLE_VOLUMEDOCK_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param type="spacer" default="PLAYLIST_SETTINGS" />
+    <param name="playlist" type="radio" default="1" label="ENABLE_OR_DISABLE_PLAYLIST_LABEL" description="ENABLE_OR_DISABLE_PLAYLIST_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="counter" type="radio" default="1" label="COUNTER_LABEL" description="COUNTER_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="download" type="radio" default="0" label="ENABLE_OR_DISABLE_DOWNLOAD_LABEL" description="ENABLE_OR_DISABLE_DOWNLOAD_DESCRIPTION" >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </param>
+    <param name="css" type="textarea" cols="50" rows="10" default="" label="CSS_LABEL" description="CSS_DESCRIPTION" />
+  </params>
+  <params group="advanced">
+    <param name="moduleclass_sfx" type="text" default="" label="MODULE_CLASS_SUFFIX_LABEL" description="MODULE_CLASS_SUFFIX_DESCRIPTION" size="60" />
+  </params>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field type="spacer" label="GENERAL_SETTINGS" />
+        <field name="coverimage" type="text" default="" label="COVER_IMAGE_LABEL" description="COVER_IMAGE_DESCRIPTION" size="60" />
+        <field name="musicdata" type="textarea" cols="40" rows="10" default="title,file.mp3" label="MUSIC_DATA_LABEL" description="MUSIC_DATA_DESCRIPTION" />
+        <field type="spacer" label="PLAYER_SETTINGS" />
+        <field name="width" type="text" default="100%" label="WIDTH_LABEL" description="WIDTH_DESCRIPTION" />
+        <field name="height" type="text" default="250px" label="HEIGHT_LABEL" description="HEIGHT_DESCRIPTION" />
+        <field name="autostart" type="list" default="0" label="AUTOSTART_LABEL" description="AUTOSTART_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="playlistautostart" type="list" default="1" label="PLAYLIST_AUTOSTART_LABEL" description="PLAYLIST_AUTOSTART_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="volumelevel" type="text" default="0.8" label="VOLUME_LEVEL_LABEL" description="VOLUME_LEVEL_DESCRIPTION" />
+        <field type="spacer" default="ENABLE_OR_DISABLE_SKIN_ELEMENTS" />
+        <field name="nextdock" type="list" default="1" label="ENABLE_OR_DISABLE_NEXTDOCK_LABEL" description="ENABLE_OR_DISABLE_NEXTDOCK_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="prevdock" type="list" default="1" label="ENABLE_OR_DISABLE_PREVDOCK_LABEL" description="ENABLE_OR_DISABLE_PREVDOCK_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="progressbar" type="list" default="1" label="ENABLE_OR_DISABLE_PROGRESSBAR_LABEL" description="ENABLE_OR_DISABLE_PROGRESSBAR_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="timerdock" type="list" default="1" label="ENABLE_OR_DISABLE_TIMERDOCK_LABEL" description="ENABLE_OR_DISABLE_TIMERDOCK_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="volumedock" type="list" default="1" label="ENABLE_OR_DISABLE_VOLUMEDOCK_LABEL" description="ENABLE_OR_DISABLE_VOLUMEDOCK_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field type="spacer" label="PLAYLIST_SETTINGS" />
+        <field name="playlist" type="list" default="1" label="ENABLE_OR_DISABLE_PLAYLIST_LABEL" description="ENABLE_OR_DISABLE_PLAYLIST_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="counter" type="list" default="1" label="ENABLE_OR_DISABLE_COUNTER_LABEL" description="ENABLE_OR_DISABLE_COUNTER_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="download" type="list" default="0" label="ENABLE_OR_DISABLE_DOWNLOAD_LABEL" description="ENABLE_OR_DISABLE_DOWNLOAD_DESCRIPTION" >
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="css" type="textarea" cols="40" rows="10" default="" label="CSS_LABEL" description="CSS_DESCRIPTION" />
+      </fieldset>
+      <fieldset name="advanced">
+        <field name="moduleclass_sfx" type="text" default="" label="MODULE_CLASS_SUFFIX_LABEL" description="MODULE_CLASS_SUFFIX_DESCRIPTION" size="60" />
+      </fieldset>
+    </fields>
+  </config>
+</extension>
